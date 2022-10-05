@@ -21,14 +21,12 @@ export default class Weather {
     getWeather(position) {
         const lat = position.coords.latitude;
         const lon = position.coords.longitude;
-        console.log(lat, lon);
 
         const url = `https://api.weatherapi.com/v1/current.json?key=${this.apiKey}&q=${lat},${lon}&aqi=no`;
         
         fetch(url)
             .then(response => response.json())
             .then((data) => {
-                console.log(data)
                 localStorage.setItem('weather', JSON.stringify(data));
                 localStorage.setItem('timestamp', Date.now());
 
