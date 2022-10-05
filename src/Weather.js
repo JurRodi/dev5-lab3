@@ -8,6 +8,7 @@ export default class Weather {
         } else {
             this.getLocation();
         }
+        this.clearDisplay();
     }
 
     getLocation() {
@@ -45,5 +46,22 @@ export default class Weather {
         const img = document.createElement('img');
         img.src = icon;
         document.querySelector(".weather__icon").appendChild(img);
+    }
+
+    clearDisplay() {
+        const h1 = document.querySelector('h1');
+        h1.addEventListener('click', () => {
+            document.querySelector('#app').innerHTML = '';
+            
+            const div1 = document.createElement('div');
+            div1.classList.add('div1');
+            const div2 = document.createElement('div');
+            div2.classList.add('div2');
+            const div3 = document.createElement('div');
+            div3.classList.add('div3');
+            document.querySelector('#app').appendChild(div1);
+            document.querySelector('#app').appendChild(div2);
+            document.querySelector('#app').appendChild(div3);
+        });
     }
 }
