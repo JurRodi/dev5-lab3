@@ -54,10 +54,18 @@ export default class Weather {
     }
 
     getNumberFact(temp) {
-        const url = `http://numbersapi.com/${temp}`;
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': 'your-api-key',
+                'X-RapidAPI-Host': 'numbersapi.p.rapidapi.com'
+            }
+        };
 
-        fetch(url)
-            .then(response => response.text())
+        const url = `https://numbersapi.p.rapidapi.com/${temp}/trivia?fragment=true&json=true`;
+        
+        fetch(url, options)
+            .then(response => response.json())
             .then((data) => {
                 this.displayFact(data);
             });
@@ -65,7 +73,7 @@ export default class Weather {
 
     displayFact(data) {
         const h1 = document.createElement('h1');
-        h1.innerHTML = data;
+        h1.innerHTML = data.text;
         const gif = document.createElement('img');
         gif.src = 'https://gifsec.com/wp-content/uploads/2022/10/wow-gif-1.gif';
         gif.classList.add('gif');
