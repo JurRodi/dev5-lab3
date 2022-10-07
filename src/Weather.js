@@ -8,9 +8,11 @@ export default class Weather {
         } else {
             this.getLocation();
         }
-        document.querySelector('h1').addEventListener('click', () => {
+        const h1 = document.querySelector('h1');
+        h1.addEventListener('click', () => {
+            const temp = h1.innerHTML.split('°')[0];
             document.querySelector('#app').innerHTML = '';
-            this.newDisplay();
+            this.getNumberFact(temp);
         });
     }
 
@@ -51,7 +53,17 @@ export default class Weather {
         document.querySelector(".weather__icon").appendChild(img);
     }
 
-    newDisplay() {
+    getNumberFact(temp) {
+        const url = `http://numbersapi.com/${temp}`;
+
+        fetch(url)
+            .then(response => response.text())
+            .then((data) => {
+                this.displayFact(data);
+            });
+    }
+
+    displayFact(data) {
         const div1 = document.createElement('div');
         div1.classList.add('bg__img', 'div1');
         const div2 = document.createElement('div');
