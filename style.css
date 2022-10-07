@@ -34,3 +34,27 @@ img{
     width: 100px;
     height: 100px;
 }
+
+.bg__img{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.div1{
+    background-image: url();
+}
+
+.div2{
+    background-image: url();
+}
+
+.div3{
+    background-image: url();
+}

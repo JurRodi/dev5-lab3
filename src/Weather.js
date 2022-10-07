@@ -53,11 +53,11 @@ export default class Weather {
 
     newDisplay() {
         const div1 = document.createElement('div');
-        div1.classList.add('div1');
+        div1.classList.add('bg__img', 'div1');
         const div2 = document.createElement('div');
-        div2.classList.add('div2');
+        div2.classList.add('bg__img', 'div2');
         const div3 = document.createElement('div');
-        div3.classList.add('div3');
+        div3.classList.add('bg__img', 'div3');
         document.querySelector('#app').appendChild(div1);
         document.querySelector('#app').appendChild(div2);
         document.querySelector('#app').appendChild(div3);
