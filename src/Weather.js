@@ -66,15 +66,11 @@ export default class Weather {
     displayFact(data) {
         const h1 = document.createElement('h1');
         h1.innerHTML = data;
-        const div1 = document.createElement('div');
-        div1.classList.add('bg__img', 'div1');
-        const div2 = document.createElement('div');
-        div2.classList.add('bg__img', 'div2');
-        const div3 = document.createElement('div');
-        div3.classList.add('bg__img', 'div3');
-        document.querySelector('#app').appendChild(h1);
-        document.querySelector('#app').appendChild(div1);
-        document.querySelector('#app').appendChild(div2);
-        document.querySelector('#app').appendChild(div3);
+        const gif = document.createElement('img');
+        gif.src = 'https://gifsec.com/wp-content/uploads/2022/10/wow-gif-1.gif';
+        gif.classList.add('gif');
+        const app = document.querySelector('#app');
+        app.appendChild(h1);
+        app.appendChild(gif);
     }
 }
