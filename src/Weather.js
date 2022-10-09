@@ -57,7 +57,7 @@ export default class Weather {
         const options = {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': 'your-api-key',
+                'X-RapidAPI-Key': import.meta.env.VITE_API_KEY,
                 'X-RapidAPI-Host': 'numbersapi.p.rapidapi.com'
             }
         };
